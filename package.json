@@ -1,0 +1,40 @@
+{
+  "version": "1.0.0",
+  "name": "occ-flowers-sdk",
+  "author": "Sam King",
+  "license": "MIT",
+  "type": "module",
+  "source": "src/index.ts",
+  "main": "./dist/index.cjs",
+  "exports": "./dist/index.modern.js",
+  "module": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
+  "files": [
+    "dist/*"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "clean": "npx rimraf dist",
+    "build": "npm run clean && microbundle",
+    "dev": "microbundle watch",
+    "test": "NODE_ENV=test jest",
+    "make-source-data": "node scripts/make-source-data.js"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.14.5",
+    "@babel/plugin-proposal-export-default-from": "^7.14.5",
+    "@babel/plugin-transform-runtime": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "@babel/preset-typescript": "^7.15.0",
+    "@types/jest": "^27.0.2",
+    "jest": "^27.2.5",
+    "microbundle": "^0.14.0",
+    "typescript": "^4.4.3"
+  },
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "ethers": "^5.4.7"
+  }
+}
